@@ -1,0 +1,271 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #FCF1CF;
+  background-image:
+    linear-gradient(to right, rgba(180, 170, 140, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 170, 140, 0.35) 1px, transparent 1px);
+  background-size: 40px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Keyframes ── */
+
+@keyframes fromTop {
+  from { opacity: 0; transform: translateY(-60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fromLeft {
+  from { opacity: 0; transform: translateX(-80px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fromRight {
+  from { opacity: 0; transform: translateX(80px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fromBottom {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+@keyframes pop {
+  0%   { opacity: 0; transform: scale(0.5); }
+  70%  { transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ── Elements ── */
+
+.sun {
+  position: fixed;
+  top: -25px;
+  right: 50px;
+  width: 130px;
+  pointer-events: none;
+  animation: fromTop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+.cloud1 {
+  position: fixed;
+  top: 0;
+  left: -80px;
+  width: 200px;
+  pointer-events: none;
+  animation: fromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+}
+
+.cloud2 {
+  position: fixed;
+  top: 130px;
+  right: -70px;
+  width: 200px;
+  pointer-events: none;
+  animation: fromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+}
+
+.pagar {
+  position: fixed;
+  bottom: -100px;
+  left: 105px;
+  width: 300px;
+  pointer-events: none;
+  animation: fromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+.sun_flower {
+  position: fixed;
+  bottom: -15px;
+  left: -15px;
+  width: 130px;
+  pointer-events: none;
+  animation: fromLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+/* ── Kotak Surat ── */
+
+.kotak_surat {
+  position: relative;
+  z-index: 10;
+  width: 220px;
+  min-height: 180px;
+  background: #ffffff;
+  border-radius: 20px;
+  border-top: 2px solid #705D45;
+  border-left: 2px solid #705D45;
+  border-right: 4px solid #705D45;
+  border-bottom: 4px solid #705D45;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  cursor: pointer;
+  animation: fromBottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+.kotak_pesan {
+  position: relative;
+  z-index: 10;
+  width: 280px;
+  min-height: 260px;
+  background: #FDF7D7;
+  border-radius: 20px;
+  border-top: 2px solid #705D45;
+  border-left: 2px solid #705D45;
+  border-right: 4px solid #705D45;
+  border-bottom: 4px solid #705D45;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.pesan-header {
+  width: 100%;
+  height: 35px;
+  background: #FFE27A;
+  border-bottom: 3px solid #705D45;
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 18px 18px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.win-btn {
+  width: 25px;
+  height: 25px;
+  background: #FDF6D9;
+  border-radius: 5px;
+  border-top: 1.5px solid #705D45;
+  border-left: 1.5px solid #705D45;
+  border-right: 2.5px solid #705D45;
+  border-bottom: 2.5px solid #705D45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.win-icon {
+  color: #705D45;
+  font-size: 14px;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.win-minimize {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.kotak_pesan.show {
+  animation: pop 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: auto;
+}
+
+.pesan-atas,
+.pesan-bawah {
+  color: #705D45;
+  text-align: center;
+}
+
+.pesan-atas {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pesan-bawah {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mail-icon {
+  width: 80px;
+  pointer-events: none;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.pesan-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 50px 20px 20px;
+  width: 100%;
+}
+
+.pesan-gif {
+  width: 110px;
+  pointer-events: none;
+}
+
+.pesan-hallo {
+  color: #705D45;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn_lanjut {
+  background: #705D45;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}

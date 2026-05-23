@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Konten kamu bisa ditaruh di sini -->
+  <img src="pagar.png" class="pagar" alt="pagar" />
+  <img src="flower_sun.png" class="sun_flower" alt="sun_flower" />
+  <img src="cloud1.png" class="cloud1" alt="cloud1" />
+  <img src="cloud2.png" class="cloud2" alt="cloud2" />
+  <img src="sun_icon.png" class="sun" alt="sun" />
+
+  <div class="kotak_surat" onclick="bukaPesan()">
+    <p class="pesan-atas">Ada pesan buat kamu</p>
+    <img src="mail.png" class="mail-icon" alt="mail" />
+    <p class="pesan-bawah">Tekan untuk membuka</p>
+  </div>
+  
+  <!-- Kotak Pesan 1 -->
+  <div class="kotak_pesan" id="kotak_pesan_1">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif1.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Hallo Aretaa</p>
+      <button class="btn_lanjut" onclick="bukaPesan2()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 2 -->
+  <div class="kotak_pesan" id="kotak_pesan_2">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif2.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Kamu tau enggak hari ini hari apa?</p>
+      <button class="btn_lanjut" onclick="bukaPesan3()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 3 -->
+  <div class="kotak_pesan" id="kotak_pesan_3">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif3.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Yaaapp, hari spesialnya sayangku yang paling cantik</p>
+      <button class="btn_lanjut" onclick="bukaPesan4()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 4 -->
+  <div class="kotak_pesan" id="kotak_pesan_4">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif4.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Happy birthday sayangku</p>
+      <button class="btn_lanjut" onclick="bukaPesan5()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 5 -->
+  <div class="kotak_pesan" id="kotak_pesan_5">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif5.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Di ulang tahunmu ini, berdoa banyak banyak ya</p>
+      <button class="btn_lanjut" onclick="bukaPesan6()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 6 -->
+  <div class="kotak_pesan" id="kotak_pesan_6">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif6.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Akuu juga selalu ikut doain kamu dari sini</p>
+      <button class="btn_lanjut" onclick="bukaPesan7()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 7 -->
+  <div class="kotak_pesan" id="kotak_pesan_7">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif7.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Semoga kamu jadi pribadi yang lebih baik, lebih dewasa, dan lebih bahagia lagi ke depannya</p>
+      <button class="btn_lanjut" onclick="bukaPesan8()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 8 -->
+  <div class="kotak_pesan" id="kotak_pesan_8">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif8.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Sayangku harus panjang umur, sehat terus, dan jangan sering cape cape yaaa</p>
+      <button class="btn_lanjut" onclick="bukaPesan9()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 9 -->
+  <div class="kotak_pesan" id="kotak_pesan_9">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif9.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Aku maunya kamu selalu baik-baik aja</p>
+      <button class="btn_lanjut" onclick="bukaPesan10()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 10 -->
+  <div class="kotak_pesan" id="kotak_pesan_10">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif10.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Makasii yaa sudah kuat dan bertahan sejauh ini</p>
+      <button class="btn_lanjut" onclick="bukaPesan11()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 11 -->
+  <div class="kotak_pesan" id="kotak_pesan_11">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif11.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Akuu bangga banget sama kamu</p>
+      <button class="btn_lanjut" onclick="bukaPesan12()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 12 -->
+  <div class="kotak_pesan" id="kotak_pesan_12">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif12.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Semoga kedepan kita bisa terus bareng-bareng</p>
+      <button class="btn_lanjut" onclick="bukaPesan13()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 13 -->
+  <div class="kotak_pesan" id="kotak_pesan_13">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif13.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">I love you sayangkuuu</p>
+      <button class="btn_lanjut" onclick="bukaPesan14()">OK</button>
+    </div>
+  </div>
+
+  <!-- Kotak Pesan 14 -->
+  <div class="kotak_pesan" id="kotak_pesan_14">
+    <div class="pesan-header">
+      <div class="window-controls">
+        <div class="win-btn">
+          <span class="win-icon win-minimize">&#8211;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-maximize">&#9633;</span>
+        </div>
+        <div class="win-btn">
+          <span class="win-icon win-close">&#10005;</span>
+        </div>
+      </div>
+    </div>
+    <div class="pesan-body">
+      <img src="gif14.gif" class="pesan-gif" alt="gif" />
+      <p class="pesan-hallo">Maaff ya baru kasih sekarang,</p>
+      <button class="btn_lanjut" onclick="window.location.href='flowers-for-someone-flowers/index.html'">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function bukaPesan() {
+      const kotak = document.getElementById('kotak_pesan_1');
+      kotak.classList.add('show');
+    }
+
+    function bukaPesan2() {
+      const kotak1 = document.getElementById('kotak_pesan_1');
+      const kotak2 = document.getElementById('kotak_pesan_2');
+      kotak2.classList.add('show');
+      setTimeout(() => {
+        kotak1.classList.remove('show');
+        kotak1.style.opacity = '0';
+        kotak1.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan3() {
+      const kotak2 = document.getElementById('kotak_pesan_2');
+      const kotak3 = document.getElementById('kotak_pesan_3');
+      kotak3.classList.add('show');
+      setTimeout(() => {
+        kotak2.classList.remove('show');
+        kotak2.style.opacity = '0';
+        kotak2.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan4() {
+      const kotak3 = document.getElementById('kotak_pesan_3');
+      const kotak4 = document.getElementById('kotak_pesan_4');
+      kotak4.classList.add('show');
+      setTimeout(() => {
+        kotak3.classList.remove('show');
+        kotak3.style.opacity = '0';
+        kotak3.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan5() {
+      const kotak4 = document.getElementById('kotak_pesan_4');
+      const kotak5 = document.getElementById('kotak_pesan_5');
+      kotak5.classList.add('show');
+      setTimeout(() => {
+        kotak4.classList.remove('show');
+        kotak4.style.opacity = '0';
+        kotak4.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan6() {
+      const kotak5 = document.getElementById('kotak_pesan_5');
+      const kotak6 = document.getElementById('kotak_pesan_6');
+      kotak6.classList.add('show');
+      setTimeout(() => {
+        kotak5.classList.remove('show');
+        kotak5.style.opacity = '0';
+        kotak5.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan7() {
+      const kotak6 = document.getElementById('kotak_pesan_6');
+      const kotak7 = document.getElementById('kotak_pesan_7');
+      kotak7.classList.add('show');
+      setTimeout(() => {
+        kotak6.classList.remove('show');
+        kotak6.style.opacity = '0';
+        kotak6.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan8() {
+      const kotak7 = document.getElementById('kotak_pesan_7');
+      const kotak8 = document.getElementById('kotak_pesan_8');
+      kotak8.classList.add('show');
+      setTimeout(() => {
+        kotak7.classList.remove('show');
+        kotak7.style.opacity = '0';
+        kotak7.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan9() {
+      const kotak8 = document.getElementById('kotak_pesan_8');
+      const kotak9 = document.getElementById('kotak_pesan_9');
+      kotak9.classList.add('show');
+      setTimeout(() => {
+        kotak8.classList.remove('show');
+        kotak8.style.opacity = '0';
+        kotak8.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan10() {
+      const kotak9 = document.getElementById('kotak_pesan_9');
+      const kotak10 = document.getElementById('kotak_pesan_10');
+      kotak10.classList.add('show');
+      setTimeout(() => {
+        kotak9.classList.remove('show');
+        kotak9.style.opacity = '0';
+        kotak9.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan11() {
+      const kotak10 = document.getElementById('kotak_pesan_10');
+      const kotak11 = document.getElementById('kotak_pesan_11');
+      kotak11.classList.add('show');
+      setTimeout(() => {
+        kotak10.classList.remove('show');
+        kotak10.style.opacity = '0';
+        kotak10.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan12() {
+      const kotak11 = document.getElementById('kotak_pesan_11');
+      const kotak12 = document.getElementById('kotak_pesan_12');
+      kotak12.classList.add('show');
+      setTimeout(() => {
+        kotak11.classList.remove('show');
+        kotak11.style.opacity = '0';
+        kotak11.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan13() {
+      const kotak12 = document.getElementById('kotak_pesan_12');
+      const kotak13 = document.getElementById('kotak_pesan_13');
+      kotak13.classList.add('show');
+      setTimeout(() => {
+        kotak12.classList.remove('show');
+        kotak12.style.opacity = '0';
+        kotak12.style.pointerEvents = 'none';
+      }, 500);
+    }
+    function bukaPesan14() {
+      const kotak13 = document.getElementById('kotak_pesan_13');
+      const kotak14 = document.getElementById('kotak_pesan_14');
+      kotak14.classList.add('show');
+      setTimeout(() => {
+        kotak13.classList.remove('show');
+        kotak13.style.opacity = '0';
+        kotak13.style.pointerEvents = 'none';
+      }, 500);
+    }
+  </script>
+</body>
+</html>
