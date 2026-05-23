@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Birthday Page</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </head>
 <body>
+
+  <!-- Tap to Start Screen -->
+  <div class="tap-screen" id="tap-screen">
+    <div class="tap-content">
+      <p class="tap-text">✉️ Ada pesan buat kamu</p>
+      <button class="tap-btn" onclick="startPage()">Tap untuk membuka</button>
+    </div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen" style="display:none;">
+    <div class="loading-overlay"></div>
+    <div class="loading-content">
+      <div id="lottie-container"></div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bg-music" src="glue_song.mp3" loop></audio>
+
   <!-- Konten kamu bisa ditaruh di sini -->
   <img src="pagar.png" class="pagar" alt="pagar" />
   <img src="flower_sun.png" class="sun_flower" alt="sun_flower" />
@@ -321,14 +342,74 @@
         </div>
       </div>
     </div>
-    <div class="pesan-body">
-      <img src="gif14.gif" class="pesan-gif" alt="gif" />
-      <p class="pesan-hallo">Maaff ya baru kasih sekarang,</p>
-      <button class="btn_lanjut" onclick="window.location.href='flowers-for-someone-flowers/index.html'">OK</button>
+    <div class="pesan-body_akhir">
+      <img src="gif14.gif" class="pesan-gif-akhir" alt="gif" />
+      <p class="pesan-hallo">Maaff ya baru kasih sekarang</p>
     </div>
   </div>
 
   <script>
+    // Lottie loading animation
+    const animation = lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'loading_dots.json'
+    });
+
+    function startPage() {
+      // Hide tap screen
+      const tapScreen = document.getElementById('tap-screen');
+      tapScreen.style.opacity = '0';
+      tapScreen.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => tapScreen.style.display = 'none', 500);
+
+      // Show loading
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.style.display = 'flex';
+
+      // Music with fade-in
+      const music = document.getElementById('bg-music');
+      music.volume = 0;
+      music.play();
+
+      // Fade in volume from 0 to 1 over 5 seconds
+      let vol = 0;
+      const fadeInterval = setInterval(() => {
+        vol += 0.01;
+        if (vol >= 1) {
+          vol = 1;
+          clearInterval(fadeInterval);
+        }
+        music.volume = vol;
+      }, 50);
+
+      // Save music position when leaving page
+      window.addEventListener('beforeunload', () => {
+        localStorage.setItem('musicTime', music.currentTime);
+        localStorage.setItem('musicPlaying', 'true');
+      });
+
+      // Hide loading after 5 seconds
+      setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        loadingScreen.style.transition = 'opacity 0.8s ease';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+
+          // Start element animations after loading
+          const ease = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          document.querySelector('.sun').style.animation        = `fromTop 0.8s ${ease} 0.1s both`;
+          document.querySelector('.cloud1').style.animation     = `fromLeft 0.8s ${ease} 0.3s both`;
+          document.querySelector('.cloud2').style.animation     = `fromRight 0.8s ${ease} 0.3s both`;
+          document.querySelector('.pagar').style.animation      = `fromRight 0.8s ${ease} 0.5s both`;
+          document.querySelector('.sun_flower').style.animation = `fromLeft 1s ${ease} 0.5s both`;
+          document.querySelector('.kotak_surat').style.animation= `fromBottom 0.8s ${ease} 0.7s both`;
+        }, 800);
+      }, 5000);
+    }
+
     function bukaPesan() {
       const kotak = document.getElementById('kotak_pesan_1');
       kotak.classList.add('show');
